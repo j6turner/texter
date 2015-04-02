@@ -1,0 +1,24 @@
+<div>
+  <%= render "layouts/errors", :object => @contact %>
+</div>
+
+<div class="contactform">
+  <%= form_for @contact do |f| %>
+    <%= f.label :firstName %>
+    <br />
+    <%= f.text_field :firstName %>
+    <br />
+    <br />
+    <%= f.label :lastName %>
+    <br />
+    <%= f.text_field :lastName %>
+    <br />
+    <br />
+    <%= f.label :phoneNumber %>
+    <br />
+    <%= f.text_field :phoneNumber %>
+    <br />
+    <br />
+    <%= f.submit %>
+  <% end %>
+</div>
