@@ -3,7 +3,7 @@ ENV['RAILS_ENV'] ||= 'test'
 require 'spec_helper'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
-
+require 'webmock/rspec'
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
@@ -22,3 +22,5 @@ VCR.configure do |c|
   c.filter_sensitive_data('<twilio account sid>') { ENV['TWILIO_ACCOUNT_SID'] }
   c.filter_sensitive_data('<twilio auth token>') { ENV['TWILIO_AUTH_TOKEN'] }
 end
+
+WebMock.allow_net_connect!

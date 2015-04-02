@@ -1,0 +1,24 @@
+<div>
+  <%= render "layouts/errors", :object => @message %>
+</div>
+
+<div class="messageform">
+  <%= form_for @message do |f| %>
+    <%= f.label :to %>
+    <br />
+    <%= f.text_field :to %>
+    <br />
+    <br />
+    <%= f.label :from %>
+    <br />
+    <%= f.text_field :from %>
+    <br />
+    <br />
+    <%= f.label :body %>
+    <br />
+    <%= f.text_field :body %>
+    <br />
+    <br />
+    <%= f.submit %>
+  <% end %>
+</div>
